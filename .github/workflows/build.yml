@@ -92,7 +92,7 @@ jobs:
         mkdir -p Release
 
         # Execute Build
-        msbuild Spread.vcxproj -property:configuration=Release -nologo -verbosity:minimal
+        msbuild Spread.vcxproj -property:configuration=Release -nologo -verbosity:minimal -maxCpuCount
 
         # Make publish directory
         mkdir -p ..\cstrike\addons\spread\dlls
