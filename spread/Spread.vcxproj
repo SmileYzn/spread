@@ -60,7 +60,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>spread_mm.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>precompiled.pch</PrecompiledHeaderOutputFile>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
@@ -82,7 +82,7 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>precompiled.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>spread_mm.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>precompiled.pch</PrecompiledHeaderOutputFile>
       <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
