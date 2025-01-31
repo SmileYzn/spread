@@ -17,22 +17,21 @@ float CSpread::GetSpread(CBaseEntity *pEntity, Vector &vecSrc, Vector &vecDirSho
     {
         if (this->m_Active->value > 0.0f)
         {
-            if (pEntity)
+            auto Player = static_cast<CBasePlayer*>(pEntity);
+
+            if (Player)
             {
-                if (pEntity->pev->flags & FL_ONGROUND)
+                if (Player->pev->flags & FL_ONGROUND)
                 {
-                    if (pEntity->pev->velocity.Length2D() < (pEntity->pev->maxspeed / 2.0f))
+                    if (Player->pev->velocity.Length2D() < (Player->pev->maxspeed / 2.0f))
                     {
-                        if (pEntity->pev->punchangle.IsZero())
+                        if (Player->pev->punchangle.IsZero())
                         {
-                            if (pEntity->pev->fov == DEFAULT_FOV)
+                            if (!Player->m_bResumeZoom)
                             {
-                                if (bPistol)
+                                if (Player->m_pActiveItem->m_iId == WEAPON_SCOUT || Player->m_pActiveItem->m_iId == WEAPON_SG550 || Player->m_pActiveItem->m_iId == WEAPON_AWP || Player->m_pActiveItem->m_iId == WEAPON_G3SG1)
                                 {
-                                    if (flDistance > 4096.0f)
-                                    {
-                                        return vecSpread;
-                                    }
+                                    return vecSpread;
                                 }
                             }
 
@@ -40,6 +39,7 @@ float CSpread::GetSpread(CBaseEntity *pEntity, Vector &vecSrc, Vector &vecDirSho
                         }
                     }
                 }
+            }
         }
     }
 
