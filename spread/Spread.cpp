@@ -4,10 +4,9 @@ CSpread gSpread;
 
 void CSpread::ServerActivate()
 {
-    static cvar_t tActive = {"sc_active", strdup("1"), FCVAR_SERVER | FCVAR_PROTECTED, 2.0f, NULL};
+    static cvar_t tActive = {"sc_active", "1", FCVAR_SERVER | FCVAR_PROTECTED, 1.0f, NULL};
 
     g_engfuncs.pfnCVarRegister(&tActive);
-
     this->m_Active = g_engfuncs.pfnCVarGetPointer(tActive.name);
 }
 
