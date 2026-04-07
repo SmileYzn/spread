@@ -224,7 +224,7 @@ float CSpread::GetSpread(CBaseEntity *pEntity, Vector &vecSrc, Vector &vecDirSho
                 {
                     if (this->m_Weapons->string[0u] != '\0')
                     {
-                        if (Player->m_pActiveItem->m_iId >= WEAPON_P228 && Player->m_pActiveItem->m_iId <= WEAPON_P90)
+                        if (Player->m_pActiveItem && Player->m_pActiveItem->m_iId >= WEAPON_P228 && Player->m_pActiveItem->m_iId <= WEAPON_P90)
                         {
                             if (DebugMode)
                             {
@@ -248,7 +248,7 @@ float CSpread::GetSpread(CBaseEntity *pEntity, Vector &vecSrc, Vector &vecDirSho
                 }
 
                 // Do not remove spred if player is not aimming his weapons like AWP, SCOUT or other
-                if (!Player->m_bResumeZoom)
+                if (!Player->m_bResumeZoom && Player->m_pActiveItem)
                 {
                     if (Player->m_pActiveItem->m_iId == WEAPON_SCOUT || Player->m_pActiveItem->m_iId == WEAPON_SG550 || Player->m_pActiveItem->m_iId == WEAPON_AWP || Player->m_pActiveItem->m_iId == WEAPON_G3SG1)
                     {
